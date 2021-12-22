@@ -37,7 +37,8 @@ sleep(2)
 get_data = True
 ext = False
 while get_data:
-    print("""                                                                                                
+    print(
+        """                                                                                                
 Welcome to Advanced Google Search!
 
 Select your Search category:
@@ -57,7 +58,7 @@ Select your Search category:
 [14] Coding Docs      
 [15] Exit Advanced Google Search
 """)
-    
+
     try:
         opt = int(input("Enter your search type: "))
         if opt > 15 or opt < 0:
@@ -76,7 +77,6 @@ Select your Search category:
             print("Your input is not a number. Please try again.")
             sleep(3)
 
-
 if opt == 1:
     print("""
  ________  ________  ___       ________  ___  ___  ___       ________  _________  ___  ________  ________   ________      
@@ -91,7 +91,8 @@ if opt == 1:
         """)
     try:
         x = int(input("Enter value of x: "))
-        operator = int(input("""
+        operator = int(
+            input("""
 Operator Directory:
 [1] Addition
 [2] Division
@@ -100,10 +101,12 @@ Operator Directory:
 [5] Power
 [6] Modulus
 Enter operator number: """))
-  
+
         y = int(input("Enter value of y: "))
     except:
-        sys.exit("ValueError: Non-Integer type input. Please relaunch Advanced Google Search")
+        sys.exit(
+            "ValueError: Non-Integer type input. Please relaunch Advanced Google Search"
+        )
 
     if operator == 1:
         print(f"{str(x)} + {str(y)} = {str(x + y)}")
@@ -118,5 +121,79 @@ Enter operator number: """))
     elif operator == 6:
         print(f"{str(x)} % {str(y)} = {str(x % y)}")
     else:
-        sys.exit("Internal Error: Operator index out of range. Please relaunch Advanced Google Search")
+        sys.exit(
+            "Internal Error: Operator index out of range. Please relaunch Advanced Google Search"
+        )
+
+elif opt == 2:
+    print("""
+
+ ________  ________  _________  ________                                     
+|\   ___ \|\   __  \|\___   ___\\   __  \                                    
+\ \  \_|\ \ \  \|\  \|___ \  \_\ \  \|\  \                                   
+ \ \  \ \\ \ \   __  \   \ \  \ \ \   __  \                                  
+  \ \  \_\\ \ \  \ \  \   \ \  \ \ \  \ \  \                                 
+   \ \_______\ \__\ \__\   \ \__\ \ \__\ \__\                                
+    \|_______|\|__|\|__|    \|__|  \|__|\|__|                                
+                                                                             
+                                                                             
+                                                                             
+ ________  ________  ________   ___      ___ _______   ________  _________   
+|\   ____\|\   __  \|\   ___  \|\  \    /  /|\  ___ \ |\   __  \|\___   ___\ 
+\ \  \___|\ \  \|\  \ \  \\ \  \ \  \  /  / | \   __/|\ \  \|\  \|___ \  \_| 
+ \ \  \    \ \  \\\  \ \  \\ \  \ \  \/  / / \ \  \_|/_\ \   _  _\   \ \  \  
+  \ \  \____\ \  \\\  \ \  \\ \  \ \    / /   \ \  \_|\ \ \  \\  \|   \ \  \ 
+   \ \_______\ \_______\ \__\\ \__\ \__/ /     \ \_______\ \__\\ _\    \ \__\
+    \|_______|\|_______|\|__| \|__|\|__|/       \|_______|\|__|\|__|    \|__|
+                                                                             
+    """)
+
+    try:
+        conversion = int(input("""Enter your type of measure:
+[1] Temperature
+[2] Weight
+[3] Length    
+        """))
+    except:
+        sys.exit("ValueError: Non-integer type input. Please try again by relaunching Advanced Google Search.")
     
+    if conversion == 1:
+        input_unit = int(input("""Enter your base input unit:
+[1] Celsius
+[2] Farenheit
+[3] Kelvin
+        """))
+        output_unit = int(input("""Enter your base output unit:
+[1] Celsius
+[2] Farenheit
+[3] Kelvin
+        """))
+        if input_unit == 1 and output_unit == 2:
+            x = int(input("""Enter value in base input: 
+            """))
+            print(f"{str(x)}°C = {str((x * 9 / 5) + 32)}°F")
+
+        elif input_unit == 1 and output_unit == 3:
+            x = int(input("""Enter value in base input: 
+            """))
+            print(f"{str(x)}°C = {str(x + 273.15)}K")
+        
+        elif input_unit == 2 and output_unit == 1:
+            x = int(input("""Enter value in base input: 
+            """))
+            print(f"{str(x)}°C = {str((x - 32) * 5 / 9)}°F")
+        
+        elif input_unit == 2 and output_unit == 3:
+            x = int(input("""Enter value in base input: 
+            """))
+            print(f"{str(x)}°C = {str((x - 32) * 5 / 9 + 273.15)}K")
+        
+        elif input_unit == 3 and output_unit == 1:
+            x = int(input("""Enter value in base input: 
+            """))
+            print(f"{str(x)}K = {str(x - 273.15)}°C")
+        
+        elif input_unit == 3 and output_unit == 2:
+            x = int(input("""Enter value in base input: 
+            """))
+            print(f"{str(x)}K = {str((x - 273.15) * 9 / 5 + 32)}°F")
