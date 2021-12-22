@@ -1,4 +1,5 @@
 from time import sleep
+import sys
 
 print("""
 
@@ -75,3 +76,47 @@ Select your Search category:
             print("Your input is not a number. Please try again.")
             sleep(3)
 
+
+if opt == 1:
+    print("""
+ ________  ________  ___       ________  ___  ___  ___       ________  _________  ___  ________  ________   ________      
+|\   ____\|\   __  \|\  \     |\   ____\|\  \|\  \|\  \     |\   __  \|\___   ___\\  \|\   __  \|\   ___  \|\   ____\     
+\ \  \___|\ \  \|\  \ \  \    \ \  \___|\ \  \\\  \ \  \    \ \  \|\  \|___ \  \_\ \  \ \  \|\  \ \  \\ \  \ \  \___|_    
+ \ \  \    \ \   __  \ \  \    \ \  \    \ \  \\\  \ \  \    \ \   __  \   \ \  \ \ \  \ \  \\\  \ \  \\ \  \ \_____  \   
+  \ \  \____\ \  \ \  \ \  \____\ \  \____\ \  \\\  \ \  \____\ \  \ \  \   \ \  \ \ \  \ \  \\\  \ \  \\ \  \|____|\  \  
+   \ \_______\ \__\ \__\ \_______\ \_______\ \_______\ \_______\ \__\ \__\   \ \__\ \ \__\ \_______\ \__\\ \__\____\_\  \ 
+    \|_______|\|__|\|__|\|_______|\|_______|\|_______|\|_______|\|__|\|__|    \|__|  \|__|\|_______|\|__| \|__|\_________\
+                                                                                                              \|_________|
+                                                                                                
+        """)
+    try:
+        x = int(input("Enter value of x: "))
+        operator = int(input("""
+Operator Directory:
+[1] Addition
+[2] Division
+[3] Multiplication
+[4] Subtraction
+[5] Power
+[6] Modulus
+Enter operator number: """))
+  
+        y = int(input("Enter value of y: "))
+    except:
+        sys.exit("ValueError: Non-Integer type input. Please relaunch Advanced Google Search")
+
+    if operator == 1:
+        print(f"{str(x)} + {str(y)} = {str(x + y)}")
+    elif operator == 2:
+        print(f"{str(x)} ÷ {str(y)} = {str(x / y)}")
+    elif operator == 3:
+        print(f"{str(x)} × {str(y)} = {str(x * y)}")
+    elif operator == 4:
+        print(f"{str(x)} - {str(y)} = {str(x - y)}")
+    elif operator == 5:
+        print(f"{str(x)} ** {str(y)} = {str(x ** y)}")
+    elif operator == 6:
+        print(f"{str(x)} % {str(y)} = {str(x % y)}")
+    else:
+        sys.exit("Internal Error: Operator index out of range. Please relaunch Advanced Google Search")
+    
